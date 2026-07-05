@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>RTTS 2026 — Crew Tracker</title>
+  <title>RTTS 2026 â Crew Tracker</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -17,12 +17,12 @@
       font-size: 15px;
     }
 
-    /* ── Header ── */
+    /* ââ Header ââ */
     .header { margin-bottom: 18px; }
     .header h1 { font-size: 1.25rem; color: #fff; font-weight: 700; }
     .header p  { font-size: 0.8rem; color: #666; margin-top: 3px; }
 
-    /* ── Cards ── */
+    /* ââ Cards ââ */
     .card {
       background: #181818;
       border-radius: 12px;
@@ -30,7 +30,7 @@
       margin-bottom: 12px;
     }
 
-    /* ── Section label ── */
+    /* ââ Section label ââ */
     .sec-label {
       font-size: 0.7rem;
       text-transform: uppercase;
@@ -40,7 +40,7 @@
       font-weight: 600;
     }
 
-    /* ── Toggle pair ── */
+    /* ââ Toggle pair ââ */
     .toggle-pair {
       display: flex;
       gap: 8px;
@@ -62,7 +62,7 @@
     .tbtn.on  { border-color: #f59e0b; color: #f59e0b; background: #1a1500; }
     .tbtn .sub { font-size: 0.73rem; opacity: 0.75; display: block; }
 
-    /* ── Inputs ── */
+    /* ââ Inputs ââ */
     .field { margin-top: 12px; }
     .field label { display: block; font-size: 0.78rem; color: #888; margin-bottom: 5px; }
     .field input,
@@ -79,7 +79,7 @@
     .field select:focus { outline: none; border-color: #f59e0b; }
     .field .hint { font-size: 0.75rem; color: #555; margin-top: 5px; }
 
-    /* ── Heat warning banner ── */
+    /* ââ Heat warning banner ââ */
     .heat-banner {
       background: #1c0e00;
       border: 1px solid #78350f;
@@ -90,7 +90,7 @@
       margin-top: 10px;
     }
 
-    /* ── Status bar ── */
+    /* ââ Status bar ââ */
     .status-bar {
       display: flex;
       align-items: center;
@@ -106,7 +106,7 @@
     .s-ahead   { background: #061a0e; color: #4ade80; border: 1px solid #14532d; }
     .s-behind  { background: #1c0808; color: #f87171; border: 1px solid #7f1d1d; }
 
-    /* ── Next stop card ── */
+    /* ââ Next stop card ââ */
     .next-card {
       background: #14110a;
       border: 2px solid #f59e0b;
@@ -129,7 +129,7 @@
       line-height: 1.5;
     }
 
-    /* ── Checkpoint table ── */
+    /* ââ Checkpoint table ââ */
     .tbl-wrap { border-radius: 12px; overflow: hidden; background: #181818; }
     table { width: 100%; border-collapse: collapse; }
     th {
@@ -182,8 +182,8 @@
 <body>
 
 <div class="header">
-  <h1>RTTS 2026 — Crew Tracker</h1>
-  <p>Russ Jefferys · Wave 1 · 11 July 2026 · Lewknor → Avebury</p>
+  <h1>RTTS 2026 â Crew Tracker</h1>
+  <p>Russ Jefferys Â· Wave 1 Â· 11 July 2026 Â· Lewknor â Avebury</p>
 </div>
 
 <!-- Scenario + start time -->
@@ -194,11 +194,11 @@
       Standard<span class="sub">~10hr target</span>
     </button>
     <button class="tbtn" id="btnHeat" onclick="setScenario('heat')">
-      🌡️ Heat Plan<span class="sub">~12hr target</span>
+      ð¡ï¸ Heat Plan<span class="sub">~12hr target</span>
     </button>
   </div>
   <div id="heatBanner" class="heat-banner" style="display:none">
-    ⚠️ Heat mode active — all paces scaled for ~31°C conditions (July 11 forecast).
+    â ï¸ Heat mode active â all paces scaled for ~31Â°C conditions (July 11 forecast).
     Use this if Russ is running conservatively in the heat.
   </div>
   <div class="field">
@@ -209,26 +209,26 @@
 
 <!-- Live position (optional) -->
 <div class="card">
-  <div class="sec-label">Current position — leave blank for plan view</div>
+  <div class="sec-label">Current position â leave blank for plan view</div>
   <div class="field">
     <label>Last seen at</label>
     <select id="cpSel" onchange="cpChanged()">
-      <option value="">— Race not yet started —</option>
-      <option value="9">PS1 — Swyncombe Estate (km 9)</option>
-      <option value="20">JESS 1 — Carmel Terrace (km 20)</option>
-      <option value="21.6">PS2 — North Stoke (km 21.6)</option>
-      <option value="30">JESS 2 — Streatley (km 30)</option>
-      <option value="36">PS3 — Yattendon (km 36)</option>
-      <option value="43">JESS 3 — Bury Lane (km 43)</option>
+      <option value="">â Race not yet started â</option>
+      <option value="9">PS1 â Swyncombe Estate (km 9)</option>
+      <option value="20">JESS 1 â Carmel Terrace (km 20)</option>
+      <option value="21.6">PS2 â North Stoke (km 21.6)</option>
+      <option value="30">JESS 2 â Streatley (km 30)</option>
+      <option value="36">PS3 â Yattendon (km 36)</option>
+      <option value="43">JESS 3 â Bury Lane (km 43)</option>
       <option value="50">Basecamp (km 50)</option>
-      <option value="58">PS5 — Sparsholt (km 58)</option>
-      <option value="60">JESS 4 — Blowingstone (km 60)</option>
-      <option value="66">📣 Ashbury Hill (km 66)</option>
-      <option value="70.89">📣 Fox Hill (km 70.89)</option>
-      <option value="71.3">PS6 — PGL (km 71.3)</option>
-      <option value="78">📣 Copse Drove (km 78)</option>
-      <option value="82">JESS 5 — Bytham Rd (km 82)</option>
-      <option value="88">PS7 — Barbury Castle (km 88)</option>
+      <option value="58">PS5 â Sparsholt (km 58)</option>
+      <option value="60">JESS 4 â Blowingstone (km 60)</option>
+      <option value="66">ð£ Ashbury Hill (km 66)</option>
+      <option value="70.89">ð£ Fox Hill (km 70.89)</option>
+      <option value="71.3">PS6 â PGL (km 71.3)</option>
+      <option value="78">ð£ Copse Drove (km 78)</option>
+      <option value="82">JESS 5 â Bytham Rd (km 82)</option>
+      <option value="88">PS7 â Barbury Castle (km 88)</option>
       <option value="custom">Other km (enter below)</option>
     </select>
   </div>
@@ -239,7 +239,7 @@
   <div class="field">
     <label>Elapsed time at that point (HH:MM:SS)</label>
     <input id="elapsed" placeholder="e.g. 04:32:00" oninput="update()">
-    <p class="hint">Use departure time if leaving a crew stop · arrival time if passing through</p>
+    <p class="hint">Use departure time if leaving a crew stop Â· arrival time if passing through</p>
   </div>
 </div>
 
@@ -265,19 +265,19 @@
 </div>
 
 <script>
-// ── Pacing data (terrain-adjusted, seconds/km) ──────────────────────────────
-// Index 0 unused; km 1–101 are indices 1–101
+// ââ Pacing data (terrain-adjusted, seconds/km) ââââââââââââââââââââââââââââââ
+// Index 0 unused; km 1â101 are indices 1â101
 const P = [0,
-  340,324,319,326,323,338,324,347,356,       //  1–9
-  320,375,304,363,317,300,308,309,336,311,312,// 10–20
-  326,326,325,326,326,327,328,331,323,340,   // 21–30
-  338,329,350,367,354,305,316,310,357,336,   // 31–40
-  330,335,333,328,334,330,331,320,338,336,   // 41–50
-  317,333,318,340,319,332,328,336,312,325,   // 51–60
-  338,480,312,320,327,322,325,314,540,366,   // 61–70
-  305,333,600,600,315,333,327,322,319,320,   // 71–80
-  301,310,319,600,600,600,600,600,329,326,   // 81–90
-  341,326,320,335,317,307,300,309,326,328,323// 91–101
+  340,324,319,326,323,338,324,347,356,       //  1â9
+  320,375,304,363,317,300,308,309,336,311,312,// 10â20
+  326,326,325,326,326,327,328,331,323,340,   // 21â30
+  338,329,350,367,354,305,316,310,357,336,   // 31â40
+  330,335,333,328,334,330,331,320,338,336,   // 41â50
+  317,333,318,340,319,332,328,336,312,325,   // 51â60
+  338,480,312,320,327,322,325,314,540,366,   // 61â70
+  305,333,600,600,315,333,327,322,319,320,   // 71â80
+  301,310,319,600,600,600,600,600,329,326,   // 81â90
+  341,326,320,335,317,307,300,309,326,328,323// 91â101
 ];
 
 // Checkpoint stop durations (seconds)
@@ -285,39 +285,39 @@ const STOPS = {9:60,20:120,30:120,36:60,43:120,50:60,58:60,60:120,71.3:60,82:120
 
 // Named checkpoints
 const CPS = [
-  {km:9,    name:'PS1 — Swyncombe Estate',  jess:false},
-  {km:20,   name:'JESS 1 — Carmel Terrace', jess:true,
-   prep:'2 × 500ml PH1000 · PB&J · banana · 🧊 ice bag'},
-  {km:21.6, name:'PS2 — North Stoke',       jess:false, through:true},
-  {km:30,   name:'JESS 2 — Streatley',      jess:true,
-   prep:'2 × 500ml PH1000 · PB&J · trail mix · 🧊 ice + cold water over head'},
-  {km:36,   name:'PS3 — Yattendon',         jess:false},
-  {km:43,   name:'JESS 3 — Bury Lane',      jess:true,
-   prep:'3 × 500ml PH1000 · pot noodle · banana · 🧊 ice bag + cold water over head · ⚠️ heat window from here'},
+  {km:9,    name:'PS1 â Swyncombe Estate',  jess:false},
+  {km:20,   name:'JESS 1 â Carmel Terrace', jess:true,
+   prep:'2 Ã 500ml PH1000 Â· PB&J Â· banana Â· ð§ ice bag'},
+  {km:21.6, name:'PS2 â North Stoke',       jess:false, through:true},
+  {km:30,   name:'JESS 2 â Streatley',      jess:true,
+   prep:'2 Ã 500ml PH1000 Â· PB&J Â· trail mix Â· ð§ ice + cold water over head'},
+  {km:36,   name:'PS3 â Yattendon',         jess:false},
+  {km:43,   name:'JESS 3 â Bury Lane',      jess:true,
+   prep:'3 Ã 500ml PH1000 Â· pot noodle Â· banana Â· ð§ ice bag + cold water over head Â· â ï¸ heat window from here'},
   {km:50,   name:'Basecamp (50km)',          jess:false},
-  {km:58,   name:'PS5 — Sparsholt',         jess:false},
-  {km:60,   name:'JESS 4 — Blowingstone',   jess:true,
-   prep:'3 × 500ml PH1000 · pot noodle · trail mix · 🔥 PRIORITY: ice vest if available · ice bag · cold water over head · 2 min in shade'},
-  {km:66,   name:'📣 Ashbury Hill',          cheer:true},
-  {km:70.89, name:'📣 Fox Hill',             cheer:true},
-  {km:71.3, name:'PS6 — PGL',               jess:false},
-  {km:78,   name:'📣 Copse Drove',           cheer:true},
-  {km:82,   name:'JESS 5 — Bytham Rd',      jess:true,
-   prep:'2 × 500ml PH1000 · pot noodle · mars bar · 🧊 ice bag · 20km to go'},
-  {km:88,   name:'PS7 — Barbury Castle',    jess:false},
-  {km:101,  name:'🏁 FINISH — Avebury',     jess:false},
+  {km:58,   name:'PS5 â Sparsholt',         jess:false},
+  {km:60,   name:'JESS 4 â Blowingstone',   jess:true,
+   prep:'3 Ã 500ml PH1000 Â· pot noodle Â· trail mix Â· ð¥ PRIORITY: ice vest if available Â· ice bag Â· cold water over head Â· 2 min in shade'},
+  {km:66,   name:'ð£ Ashbury Hill',          cheer:true},
+  {km:70.89, name:'ð£ Fox Hill',             cheer:true},
+  {km:71.3, name:'PS6 â PGL',               jess:false},
+  {km:78,   name:'ð£ Copse Drove',           cheer:true},
+  {km:82,   name:'JESS 5 â Bytham Rd',      jess:true,
+   prep:'2 Ã 500ml PH1000 Â· pot noodle Â· mars bar Â· ð§ ice bag Â· 20km to go'},
+  {km:88,   name:'PS7 â Barbury Castle',    jess:false},
+  {km:101,  name:'ð FINISH â Avebury',     jess:false},
 ];
 
 // Correction: normalises pace sum to exactly hit 10h01m finish (35100s moving time)
-const CORRECTION = 35100 / 35302; // ≈ 0.9943
+const CORRECTION = 35100 / 35302; // â 0.9943
 
 // Heat scaling factor: 12h00m target vs 10h01m base = 720/601
 const HEAT = 720 / 601;
 
-// ── State ────────────────────────────────────────────────────────────────────
+// ââ State ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 let scenario = 'standard';
 
-// ── Fractional-km interpolation ──────────────────────────────────────────────
+// ââ Fractional-km interpolation ââââââââââââââââââââââââââââââââââââââââââââââ
 // For checkpoints at non-integer km (e.g. 21.6, 71.3): arrival = plan up to
 // floor(km) + fractional portion of the next km's pace.
 function arrivalAt(km, plan, heat) {
@@ -332,21 +332,56 @@ function departureAt(km, plan, heat) {
   return arrivalAt(km, plan, heat) + (STOPS[km] || 0);
 }
 
-// ── Compute arrival seconds from race start for each km ─────────────────────
+// ââ Pace-factor projection âââââââââââââââââââââââââââââââââââââââââââââââââââ
+// Pure running time at a (possibly fractional) km, interpolated from runArr.
+function runningTimeAt(km, plan) {
+  if (Number.isInteger(km)) return plan.runArr[km];
+  const lo = Math.floor(km);
+  return plan.runArr[lo] + (km - lo) * (plan.runArr[lo + 1] - plan.runArr[lo]);
+}
+
+// Cumulative stops taken BEFORE arriving at km (not including any stop at km itself).
+function stopsBeforeAt(km, plan) {
+  return plan.stpArr[Math.floor(km)];
+}
+
+// Infer pace factor from observed elapsed time at curKm.
+// paceFactor > 1  â running slower than plan
+// paceFactor < 1  â running faster than plan
+function computePaceFactor(curKm, eSecs, plan) {
+  const stopDur   = STOPS[curKm] || 0;           // stop taken at this checkpoint
+  const stopsAcc  = stopsBeforeAt(curKm, plan) + stopDur;
+  const actualRun = eSecs - stopsAcc;            // actual running time so far
+  const planRun   = runningTimeAt(curKm, plan);  // planned running time to here
+  if (planRun <= 0 || actualRun <= 0) return 1;
+  return actualRun / planRun;
+}
+
+// Projected arrival at a future km, using the inferred pace factor.
+// Applies the factor only to running legs â stop durations are fixed.
+function projectedAt(km, plan, paceFactor) {
+  return runningTimeAt(km, plan) * paceFactor + stopsBeforeAt(km, plan);
+}
+
+// ââ Compute arrival seconds from race start for each km âââââââââââââââââââââ
+// runArr[k]  = pure running time to reach km k (heat-scaled, no stops)
+// stpArr[k]  = cumulative stops BEFORE arriving at km k
 function buildPlan(heat) {
   const f = (heat ? HEAT : 1) * CORRECTION;
-  const arr = [0], dep = [0];
+  const arr = [0], dep = [0], runArr = [0], stpArr = [0];
   let run = 0, stp = 0;
   for (let k = 1; k <= 101; k++) {
     run += P[k] * f;
+    runArr.push(run);
+    stpArr.push(stp);
     arr.push(run + stp);
     stp += (STOPS[k] || 0);
     dep.push(run + stp);
   }
-  return {arr, dep};
+  return {arr, dep, runArr, stpArr};
 }
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+// ââ Helpers ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function startSecs() {
   const [h,m] = document.getElementById('startTime').value.split(':').map(Number);
   return h * 3600 + m * 60;
@@ -380,7 +415,7 @@ function diffHtml(diffS) {
   return `<div class="diff-behind">${m}m late</div>`;
 }
 
-// ── UI helpers ───────────────────────────────────────────────────────────────
+// ââ UI helpers âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function setScenario(s) {
   scenario = s;
   document.getElementById('btnStd').className  = 'tbtn' + (s==='standard'?' on':'');
@@ -395,7 +430,7 @@ function cpChanged() {
   update();
 }
 
-// ── Main update ──────────────────────────────────────────────────────────────
+// ââ Main update ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function update() {
   const heat  = scenario === 'heat';
   const plan  = buildPlan(heat);
@@ -415,41 +450,44 @@ function update() {
   const eSecs = parseElapsed(document.getElementById('elapsed').value);
   const live  = curKm !== null && eSecs !== null;
 
-  // Offset vs plan
-  let offset = 0;
+  // Pace factor vs plan (live mode only).
+  // Separates actual running time from stop time to infer whether Russ is
+  // running faster or slower than plan â then compounds that across remaining legs.
+  let paceFactor = 1;
   if (live) {
-    // Use departure from plan if this is a named stop, else arrival
-    const planRef = STOPS[curKm] ? departureAt(curKm, plan, heat) : arrivalAt(curKm, plan, heat);
-    offset = eSecs - planRef;
+    paceFactor = computePaceFactor(curKm, eSecs, plan);
   }
 
-  // ── Status bar ──
+  // ââ Status bar ââ
   const sb = document.getElementById('statusBar');
   if (live) {
-    const m = Math.round(Math.abs(offset) / 60);
-    let cls, txt;
-    if (Math.abs(offset) < 120) {
-      cls = 's-ontrack'; txt = '✓ On plan';
-    } else if (offset < 0) {
-      cls = 's-ahead'; txt = `▲ ${m} minutes ahead of plan`;
+    const pct          = Math.round((paceFactor - 1) * 100);
+    const projFinishS  = projectedAt(101, plan, paceFactor);
+    const finishWC     = wallClock(projFinishS, start);
+    const finishEl     = fmtElapsed(projFinishS);
+    let cls, paceStr;
+    if (Math.abs(pct) <= 2) {
+      cls = 's-ontrack'; paceStr = 'â On pace';
+    } else if (pct < 0) {
+      cls = 's-ahead';  paceStr = `â² ${Math.abs(pct)}% ahead of plan pace`;
     } else {
-      cls = 's-behind'; txt = `▼ ${m} minutes behind plan`;
+      cls = 's-behind'; paceStr = `â¼ ${pct}% behind plan pace`;
     }
     sb.className = `status-bar ${cls}`;
-    sb.textContent = txt;
+    sb.innerHTML = `<span>${paceStr}</span><span style="opacity:0.55;font-size:0.8em;margin-left:12px">Proj finish ${finishWC} (${finishEl})</span>`;
     sb.style.display = 'flex';
   } else {
     sb.style.display = 'none';
   }
 
-  // ── Next Jess stop card ──
+  // ââ Next Jess stop card ââ
   const nc = document.getElementById('nextCard');
   const nextJess = live
     ? CPS.find(c => c.jess && c.km > curKm)
     : null;
 
   if (nextJess) {
-    const arrS = arrivalAt(nextJess.km, plan, heat) + offset;
+    const arrS = projectedAt(nextJess.km, plan, paceFactor);
     const wc   = wallClock(arrS, start);
     nc.style.display = 'block';
     nc.innerHTML = `
@@ -457,18 +495,18 @@ function update() {
         <div class="nc-label">Next Jess Stop</div>
         <div class="nc-name">${nextJess.name}</div>
         <div class="nc-time">${wc}</div>
-        <div class="nc-sub">km ${nextJess.km} · ${fmtElapsed(arrS)} elapsed</div>
-        ${nextJess.prep ? `<div class="nc-prep">📦 ${nextJess.prep}</div>` : ''}
+        <div class="nc-sub">km ${nextJess.km} Â· ${fmtElapsed(arrS)} elapsed</div>
+        ${nextJess.prep ? `<div class="nc-prep">ð¦ ${nextJess.prep}</div>` : ''}
       </div>`;
   } else {
     nc.style.display = 'none';
   }
 
-  // ── Table headers ──
+  // ââ Table headers ââ
   document.getElementById('thPlan').textContent = live ? 'Plan'     : 'ETA';
   document.getElementById('thProj').style.display = live ? ''       : 'none';
 
-  // ── Table rows ──
+  // ââ Table rows ââ
   let html = '';
   CPS.forEach(cp => {
     const past     = live && cp.km <= curKm;
@@ -483,7 +521,7 @@ function update() {
       if (past) {
         projCell = `<td class="col-proj t-past">done</td>`;
       } else {
-        const projS = planArrS + offset;
+        const projS = projectedAt(cp.km, plan, paceFactor);
         const diff  = projS - planArrS;
         projCell = `<td class="col-proj">
           <div class="t-proj">${wallClock(projS, start)}</div>
@@ -496,7 +534,7 @@ function update() {
       <tr class="${rowClass}">
         <td>
           <div class="cp-name">${cp.name}</div>
-          <div class="km-tag">km ${cp.km} · ${fmtElapsed(planArrS)}</div>
+          <div class="km-tag">km ${cp.km} Â· ${fmtElapsed(planArrS)}</div>
         </td>
         <td class="col-plan">
           <div class="t-plan">${past ? `<span class="t-past">${planWC}</span>` : planWC}</div>
@@ -507,7 +545,7 @@ function update() {
   document.getElementById('tbody').innerHTML = html;
 }
 
-// ── Init ──────────────────────────────────────────────────────────────────────
+// ââ Init ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 update();
 </script>
 </body>
